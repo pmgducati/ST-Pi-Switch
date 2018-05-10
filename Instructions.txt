@@ -21,7 +21,12 @@ Save and exit
     sudopython3 pi-smarthings-task-runner.py
     In Chrome: 192.168.X.X:82/door/door1/activate (change door and door 1 to match your variables)
 
-5. Smartthings Setup:
+5. Make the Python Script runat boot
+    sudo crontab -e
+    Add the following to the bottom of the crontab document:
+    @reboot python /home/pi/pi-smartthings-task-runner.py &
+
+6. Smartthings Setup:
     Goto https://graph.api.smartthings.com/
     
     Make sure Hub is registering in My hubs
